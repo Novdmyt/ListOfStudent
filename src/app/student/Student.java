@@ -1,11 +1,15 @@
 package app.student;
 
+import app.util.Speciality;
+
+import java.util.Objects;
+
 public class Student {
     String name;
-    String spec;
+    Speciality spec;
     int kuz;
 
-    public Student(String name, String spec, int kuz) {
+    public Student(String name, Speciality spec, int kuz) {
         this.name = name;
         this.spec = spec;
         this.kuz = kuz;
@@ -19,11 +23,11 @@ public class Student {
         this.name = name;
     }
 
-    public String getSpec() {
+    public Speciality getSpec() {
         return spec;
     }
 
-    public void setSpec(String spec) {
+    public void setSpec(Speciality spec) {
         this.spec = spec;
     }
 
@@ -43,14 +47,14 @@ public class Student {
         Student student = (Student) o;
 
         if (kuz != student.kuz) return false;
-        if (!name.equals(student.name)) return false;
-        return spec.equals(student.spec);
+        if (!Objects.equals(name, student.name)) return false;
+        return spec == student.spec;
     }
 
     @Override
     public int hashCode() {
-        int result = name.hashCode();
-        result = 31 * result + spec.hashCode();
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + (spec != null ? spec.hashCode() : 0);
         result = 31 * result + kuz;
         return result;
     }
