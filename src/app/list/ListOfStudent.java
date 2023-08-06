@@ -8,7 +8,8 @@ import java.util.List;
 
 public class ListOfStudent {
     private List<Student> getData(){
-        List<Student> students = Arrays.asList(
+
+        return Arrays.asList(
                 new Student("Alex", Speciality.Physics, 1),
                 new Student("Rika", Speciality.Biology, 4),
                 new Student("Julia", Speciality.Biology, 2),
@@ -22,7 +23,5 @@ public class ListOfStudent {
                 new Student("Tim", Speciality.ComputerScience, 5),
                 new Student("Ann", Speciality.Psychology, 1)
         );
-
-        return students;
     }
 }
