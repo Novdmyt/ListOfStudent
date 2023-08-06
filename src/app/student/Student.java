@@ -58,5 +58,12 @@ public class Student {
         result = 31 * result + kuz;
         return result;
     }
+
+    @Override
+    public String toString() {
+        return
+                 name + ": " +  spec + " " + kuz  ;
+    }
+
 }
 
