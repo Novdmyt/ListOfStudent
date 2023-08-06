@@ -12,7 +12,19 @@ public class GroupData {
 
 
     }
-public static void getOutput(Map<Integer, List<Student>> groupStudent){
-    groupStudent.entrySet().forEach(System.out::println);
+
+    public static Map<Speciality, Long> getSpel(List<Student> students){
+        return students.stream().
+                collect(Collectors.groupingBy(Student::getSpec,
+                Collectors.counting()));
+    }
+
+    public static void getOutput2(Map<Speciality, Long> students){
+        students.forEach((s, count) -> System.out.println(s + ": " + count));
+    }
+
+
+public static void getOutput(Map<Integer, List<Student>> students){
+    students.entrySet().forEach(System.out::println);
 }
 }
